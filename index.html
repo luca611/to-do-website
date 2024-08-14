@@ -18,23 +18,23 @@
     </div>
     <main>
         <div class="page active" id="todo-page">
-            <h1>To-Do App</h1>
-            <form id="todo-form">
+            <span class="title">To do</span>
+            <form id="todo-form" class="todo-form">
                 <input type="text" id="todo-input" placeholder="Enter a task">
                 <button type="submit">Add</button>
             </form>
-            <div id="todo-list">
+            <div id="todo-list" class="todo-list">
                 <!-- Todo tasks will be dynamically added here -->
             </div>
         </div>
         <div class="page" id="completed-page">
-            <h1>Completed Tasks</h1>
+            <span class="title">Completed</span>
             <div id="completed-list">
                 <!-- Completed tasks will be dynamically added here -->
             </div>
         </div>
         <div class="page" id="ask-ai-page">
-            <h1>Ask AI</h1>
+            <span class="title">Ask AI</span>
             <form id="ask-ai-form">
                 <input type="text" id="ask-ai-input" placeholder="Ask AI a question">
                 <button type="submit">Ask</button>

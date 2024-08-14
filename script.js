@@ -24,6 +24,10 @@ todoForm.addEventListener('submit', event => {
     const task = todoInput.value.trim();
     if (task !== '') {
         const listItem = document.createElement('div');
+        listItem.classList.add('note');
+        const colors = ['blueNote', 'greenNote', 'redNote'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        listItem.classList.add(randomColor);
         const text = document.createElement('p');
         text.textContent = task;
         const completeButton = document.createElement('button');
