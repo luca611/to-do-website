@@ -20,7 +20,7 @@
         <div class="page active" id="todo-page">
             <span class="title">To do</span>
             <form id="todo-form" class="todo-form">
-                <input type="text" id="todo-input" placeholder="Enter a task">
+                <input type="text"  class="formInput" id="todo-input" placeholder="Enter a task">
                 <button type="submit">Add</button>
             </form>
             <div id="todo-list" class="todo-list">
@@ -35,9 +35,12 @@
         </div>
         <div class="page" id="ask-ai-page">
             <span class="title">Ask AI</span>
+            <div id="ai-response" class="ai-response">
+                Running out of ideas? ask me!
+            </div>
             <form id="ask-ai-form">
-                <input type="text" id="ask-ai-input" placeholder="Ask AI a question">
-                <button type="submit">Ask</button>
+                <input type="text" id="theme-input" class="themeInput" placeholder="Enter a theme">
+                <button type="button" class="ask-ai"  onclick="generateIdea()">Generate to-do</button>
             </form>
             <div id="ai-response">
                 <!-- AI response will be dynamically added here -->
