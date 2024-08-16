@@ -113,7 +113,7 @@ renderCompletedNotes();
 
 const apiKey = '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'; // Replace with your API key since i'll be deleting this key after a bit (but it's free to create your own so don't be a hungry aah and expect to use mine for your own projects)
 
-async function getGroqChatCompletion() {
+async function getGroqChatCompletion(idea) {
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -121,7 +121,7 @@ async function getGroqChatCompletion() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            messages: [{ role: 'user', content: "suggest one single ativity to do regarding " + document.getElementById("theme-input").value +" write for it a short phrase with no extras"}],
+            messages: [{ role: 'user', content: "suggest one single ativity to do regarding " + idea +" write for it a short phrase with no extras (avoid ** and other markdowns)" }],
             model: 'llama3-70b-8192'
         })
     });
@@ -131,7 +131,13 @@ async function getGroqChatCompletion() {
 }
 
 function generateIdea(){
-    getGroqChatCompletion().then((response) => {
+    let theme = document.getElementById("theme-input").value
+    if(theme === ""){
+        document.getElementById("ai-response").innerHTML = "Please enter a theme";
+        return;
+    }
+
+    getGroqChatCompletion(theme).then((response) => {
         const idea = response;
         const listItem = createNoteElement(idea, false);
         todoNotes.push(idea);
