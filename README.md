@@ -2,6 +2,8 @@
 <h2>Overview</h2>
 This is a todo app! a simple note-taking app that uses AI LLaMA 3 to generate new ideas and inspire creativity. This project aims to provide a basic interface for adding and deleting notes, with the added benefit of AI-powered suggestions.
 
+https://todo-app-with-ai.web.app/
+
 <h2>Features</h2>
 <h3>Note Taking</h3>
 <ul>
